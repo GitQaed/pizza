@@ -38,7 +38,7 @@ console.log(AfficherStudent(student));
 
 const AfficheNote = (tableauNotes: number[]) => {
   tableauNotes.forEach((valeur, index) => {
-    console.log(`Note n°${index}: ${valeur} / 20`);
+    console.log(`Note n°${index + 1}: ${valeur} / 20`);
   });
 };
 AfficheNote(note);
