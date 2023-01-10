@@ -66,6 +66,17 @@ type Identifiable<A> = {
   id: A;
 };
 
-const IdentifiableStudent: Identifiable<number> = {
+type IdentifiableStudent = {
+  id: Identifiable<number>;
+  Student: Student;
+};
+
+const IdentifiableStudent = {
   id: 3,
+  Student: {
+    nom: "Amin",
+    prenom: "Ali",
+    age: 37,
+    notes: [20, 20, 20],
+  },
 };
