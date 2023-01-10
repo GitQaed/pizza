@@ -8,7 +8,7 @@ const note: number[] = [a, b, 12];
 console.table(note);
 
 const ordonnerNotes = (tableauDeNotes: number[]): number[] => {
-  let noteSort = note.sort((a, b) => a - b);
+  let noteSort = tableauDeNotes.sort((a, b) => a - b);
   return noteSort;
 };
 
