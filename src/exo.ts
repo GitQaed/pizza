@@ -7,7 +7,7 @@ const note: number[] = [a, b, 12];
 
 console.table(note);
 
-const ordonnerNotes = (tableauDeNotes: number[]) => {
+const ordonnerNotes = (tableauDeNotes: number[]): number[] => {
   let noteSort = note.sort((a, b) => a - b);
   return noteSort;
 };
@@ -30,20 +30,20 @@ const student = {
 
 console.table(student);
 
-const AfficherStudent = (student: Student) => {
+const AfficherStudent = (student: Student): string => {
   return `Bonjour ${student.prenom} ${student.nom}, vous avez ${student.age} ans `;
 };
 
 console.log(AfficherStudent(student));
 
-const AfficheNote = (tableauNotes: number[]) => {
+const AfficheNote = (tableauNotes: number[]): void => {
   tableauNotes.forEach((valeur, index) => {
     console.log(`Note n°${index + 1}: ${valeur} / 20`);
   });
 };
 AfficheNote(note);
 
-const moyenne = (tableauDeNotes: number[]) => {
+const moyenne = (tableauDeNotes: number[]): number => {
   let total = 0;
   for (let i = 0; i < tableauDeNotes.length; i++) {
     total += tableauDeNotes[i];
