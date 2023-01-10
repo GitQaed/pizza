@@ -33,7 +33,6 @@ console.table(student);
 const AfficherStudent = (student: Student): string => {
   return `Bonjour ${student.prenom} ${student.nom}, vous avez ${student.age} ans `;
 };
-
 console.log(AfficherStudent(student));
 
 const AfficheNote = (tableauNotes: number[]): void => {
@@ -50,7 +49,6 @@ const moyenne = (tableauDeNotes: number[]): number => {
   }
   return total / tableauDeNotes.length;
 };
-
 console.log(`la moyenne des notes est: ${moyenne(note)}`);
 
 type ProfPrincipal = {
