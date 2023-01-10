@@ -21,20 +21,20 @@ type Student = {
   notes: number[];
 };
 
-const Student = {
+const student = {
   nom: "Doe",
   prenom: "john",
   age: 45,
   notes: note,
 };
 
-console.table(Student);
+console.table(student);
 
 const AfficherStudent = (student: Student) => {
   return `Bonjour ${student.prenom} ${student.nom}, vous avez ${student.age} ans `;
 };
 
-console.log(AfficherStudent(Student));
+console.log(AfficherStudent(student));
 
 const AfficheNote = (tableauNotes: number[]) => {
   tableauNotes.forEach((valeur, index) => {
@@ -66,17 +66,12 @@ type Identifiable<A> = {
   id: A;
 };
 
-type IdentifiableStudent = {
-  id: Identifiable<number>;
-  Student: Student;
-};
+type IdentifiableStudent = Identifiable<number> & Student;
 
-const IdentifiableStudent = {
+const Etudiant: IdentifiableStudent = {
   id: 3,
-  Student: {
-    nom: "Amin",
-    prenom: "Ali",
-    age: 37,
-    notes: [20, 20, 20],
-  },
+  nom: "Amin",
+  prenom: "Ali",
+  age: 37,
+  notes: [20, 20, 20],
 };
