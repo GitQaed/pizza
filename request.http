@@ -1,0 +1,21 @@
+GET http://127.0.0.1:5353/add/10/7
+
+###
+
+GET http://127.0.0.1:5353/div/3/0
+
+###
+
+GET http://127.0.0.1:5353/mul/3/7
+
+###
+
+GET http://127.0.0.1:5353/sub/3/3
+
+###
+
+GET http://127.0.0.1:5353/calc/3/4?operation=sub
+
+###
+
+GET http://www.google.fr
