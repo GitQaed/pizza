@@ -19,3 +19,32 @@ GET http://127.0.0.1:5353/calc/3/4?operation=sub
 ###
 
 GET http://www.google.fr
+
+###
+
+GET http://127.0.0.1:5353/todos
+
+###
+
+POST http://127.0.0.1:5353/todos/push
+Content-Type: application/json
+
+{
+  "id": 2,
+  "title": "acheter du pain",
+  "done": false
+}
+
+###
+
+DELETE http://127.0.0.1:5353/todos/2
+
+###
+POST http://127.0.0.1:5353/calculatrix
+Content-Type: application/json
+
+{
+  "operation": "division",
+  "x": 1,
+  "y": 9
+}

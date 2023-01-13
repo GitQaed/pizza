@@ -1,4 +1,6 @@
 import fastify from "fastify";
+import fp from "fastify-plugin";
+import calculatrixRoute from "./routes/calculatrix";
 
 /**
  * @module calculatrice
@@ -9,6 +11,10 @@ import fastify from "fastify";
 
 // Nous allons tout d'abord créer une application fastify
 const app = fastify();
+
+// fastify plugin-------------------
+app.register(fp(calculatrixRoute));
+//----------------------------------
 
 // Type définissant les paramètre à envoyer
 // à notre route d'addition
@@ -90,12 +96,12 @@ app.get<AddRoute & OperationOwner>("/calc/:x/:y", (request, reply) => {
   return x / y;
 });
 
+const port = parseInt(process.env.PORT || "5353");
+const host = process.env.HOST;
+
 // Nous devons lancer (listen) notre serveur :
-app.listen(
-  { port: parseInt(process.env.PORT || "5353"), host: process.env.HOST },
-  () => {
-    console.log(
-      "Le serveur pour la calculatrice est prêt sur l'adresse http://127.0.0.1:5353"
-    );
-  }
-);
+app.listen({ port: port, host: host }, () => {
+  console.log(
+    `Le serveur pour la calculatrice est prêt sur l'adresse http://${host}:${port}`
+  );
+});
