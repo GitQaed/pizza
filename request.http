@@ -48,3 +48,29 @@ Content-Type: application/json
   "x": 1,
   "y": 9
 }
+
+###
+POST http://127.0.0.1:5353/pizzas
+Content-Type: application/json
+
+{
+  "nom": "luc",
+  "prix": 12.5
+}
+
+###
+
+GET http://127.0.0.1:5353/pizzas
+
+###
+
+PATCH http://127.0.0.1:5353/pizzas/63c1b44622dc6a91f0b353e5
+Content-Type: application/json
+
+{
+  "prix": 9.6
+}
+
+###
+
+DELETE http://127.0.0.1:5353/pizzas/63c153730894790ec2310867
